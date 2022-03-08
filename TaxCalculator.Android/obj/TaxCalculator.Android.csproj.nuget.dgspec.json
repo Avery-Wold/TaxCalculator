@@ -36,6 +36,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "TaxJar": {
+              "target": "Package",
+              "version": "[3.3.2, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
@@ -87,6 +91,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "TaxJar": {
+              "target": "Package",
+              "version": "[3.3.2, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

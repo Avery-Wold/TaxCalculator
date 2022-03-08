@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "zUiM9j8QiPsZR8TtUTgih+YRx204nll4CIiLVlp5Fh/wLLLOTlDNiY0V5y1Rstra5RgX/FSoB0P41Qrrp0ZGuA==",
+  "dgSpecHash": "xBMs1bU1gzL2H1464nnIazPuu9ZZ6al1gr97NYMMBMmoCEc2SJl0T1sovp24QE7rXGi2ZAjK2x8AWfqVe1++qw==",
   "success": true,
   "projectFilePath": "/Users/averywold/Projects/TaxCalculator/TaxCalculator/TaxCalculator.csproj",
   "expectedPackageFiles": [
     "/Users/averywold/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/averywold/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/restsharp/106.12.0/restsharp.106.12.0.nupkg.sha512",
     "/Users/averywold/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/taxjar/3.3.2/taxjar.3.3.2.nupkg.sha512",
     "/Users/averywold/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
     "/Users/averywold/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],

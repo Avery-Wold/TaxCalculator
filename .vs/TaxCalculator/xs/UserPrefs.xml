@@ -1,6 +1,30 @@
 ﻿<Properties StartupConfiguration="{5491703E-34BA-439F-B7B7-0D8C029288C3}|Default">
   <MonoDevelop.Ide.ItemProperties.TaxCalculator.iOS FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/Settings.cs">
+    <Files>
+      <File FileName="TaxCalculator/Services/ITaxService.cs" Line="10" Column="70" />
+      <File FileName="TaxCalculator/Services/TaxService.cs" Line="31" Column="1" />
+      <File FileName="TaxCalculator/Settings.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TaxCalculator" expanded="True">
+            <Node name="TaxCalculator" expanded="True">
+              <Node name="Services" expanded="True" />
+              <Node name="Settings.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TaxCalculator FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.TaxCalculator.Android FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TaxCalculator.Android FirstBuild="True" PreferredExecutionTarget="Android.Android_Accelerated_x86_X86_google_apis" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

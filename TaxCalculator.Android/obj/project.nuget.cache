@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "0DXAz0tZqqIXRqcD+gig8VPyZmyzm733spvHUKBmamjpThFHdDZZSVNsoWTW1qCSzESjdziqf7xNwprhI42ZuA==",
+  "dgSpecHash": "GdS5OqTWXy4q3guX6R/xhKEoWwTBG8AvCIv8IT96f99CsU0kWMTs1xNs2C6CMzkRkL/1TYETNB1J/JkvBB2AAA==",
   "success": true,
   "projectFilePath": "/Users/averywold/Projects/TaxCalculator/TaxCalculator.Android/TaxCalculator.Android.csproj",
   "expectedPackageFiles": [
+    "/Users/averywold/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/restsharp/106.12.0/restsharp.106.12.0.nupkg.sha512",
     "/Users/averywold/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/taxjar/3.3.2/taxjar.3.3.2.nupkg.sha512",
     "/Users/averywold/.nuget/packages/xamarin.androidx.activity/1.1.0.5/xamarin.androidx.activity.1.1.0.5.nupkg.sha512",
     "/Users/averywold/.nuget/packages/xamarin.androidx.annotation/1.1.0.8/xamarin.androidx.annotation.1.1.0.8.nupkg.sha512",
     "/Users/averywold/.nuget/packages/xamarin.androidx.annotation.experimental/1.0.0.8/xamarin.androidx.annotation.experimental.1.0.0.8.nupkg.sha512",
