@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{5491703E-34BA-439F-B7B7-0D8C029288C3}|Default">
   <MonoDevelop.Ide.ItemProperties.TaxCalculator.iOS FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/Settings.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/ViewModels/ViewModelBase.cs">
     <Files>
       <File FileName="TaxCalculator/Services/ITaxService.cs" Line="10" Column="70" />
-      <File FileName="TaxCalculator/Services/TaxService.cs" Line="31" Column="1" />
-      <File FileName="TaxCalculator/Settings.cs" Line="1" Column="1" />
+      <File FileName="TaxCalculator/Services/TaxService.cs" Line="64" Column="1" />
+      <File FileName="TaxCalculator/Settings.cs" Line="8" Column="59" />
+      <File FileName="TaxCalculator/ViewModels/ViewModelBase.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,9 @@
           <Node name="TaxCalculator" expanded="True">
             <Node name="TaxCalculator" expanded="True">
               <Node name="Services" expanded="True" />
-              <Node name="Settings.cs" selected="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="ViewModelBase.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
