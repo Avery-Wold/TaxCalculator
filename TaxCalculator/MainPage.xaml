@@ -15,17 +15,22 @@
 
         <StackLayout
             HorizontalOptions="Center"
-            Orientation="Horizontal">
+            Orientation="Vertical"
+            Spacing="20">
 
-            <Button Text="Get Tax Rates For Location"
+            <Button Text="{Binding TaxRateLocationLabel}"
                 Command="{Binding GoToTaxRatesPage}"
                 BackgroundColor="#7c21f3"
-                TextColor="White"/>
+                TextColor="White"
+                Padding="20"
+                    FontSize="Medium"/>
         
-            <Button Text="Calculate Tax For Order" 
+            <Button Text="{Binding TaxRateForOrderLabel}" 
                 Command="{Binding GoToTaxOrderPage}"
                 BackgroundColor="#7c21f3"
-                TextColor="White"/>
+                TextColor="White"
+                Padding="20"
+                FontSize="Medium"/>
         </StackLayout>
         
     </StackLayout>

@@ -21,6 +21,22 @@ namespace TaxCalculator.ViewModels
             }
         }
 
+        public string TaxRateLocationLabel
+        {
+            get
+            {
+                return "Get Tax Rates For Location";
+            }
+        }
+
+        public string TaxRateForOrderLabel
+        {
+            get
+            {
+                return "Calculate Tax For Order";
+            }
+        }
+
         public ICommand GoToTaxRatesPage => new Command(async () =>
         {
             //var taxCalculatorPage = Resolver.Resolve<TaxCalculatorPage>();

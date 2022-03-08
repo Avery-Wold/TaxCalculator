@@ -10,7 +10,11 @@ namespace TaxCalculator
         {
             InitializeComponent();
             Bootstrapper.Initialize();
-            MainPage = new NavigationPage(Resolver.Resolve<MainPage>());
+            MainPage = new NavigationPage(Resolver.Resolve<MainPage>())
+            {
+                BarBackgroundColor = Color.FromHex("#7c21f3"),
+                
+            };
         }
 
         protected override void OnStart()

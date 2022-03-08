@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{5491703E-34BA-439F-B7B7-0D8C029288C3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/ViewModels/MainPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/ViewModels/ViewModelBase.cs">
     <Files>
-      <File FileName="TaxCalculator/App.xaml.cs" Line="19" Column="1" />
-      <File FileName="TaxCalculator/MainPage.xaml.cs" Line="13" Column="4" />
-      <File FileName="TaxCalculator/MainPage.xaml" Line="28" Column="36" />
+      <File FileName="TaxCalculator/App.xaml.cs" Line="16" Column="17" />
+      <File FileName="TaxCalculator/MainPage.xaml.cs" Line="12" Column="31" />
+      <File FileName="TaxCalculator/MainPage.xaml" Line="28" Column="56" />
       <File FileName="TaxCalculator/Bootstrapper.cs" Line="1" Column="1" />
-      <File FileName="TaxCalculator/ViewModels/MainPageViewModel.cs" Line="11" Column="34" />
+      <File FileName="TaxCalculator/ViewModels/MainPageViewModel.cs" Line="32" Column="43" />
       <File FileName="TaxCalculator/ViewModels/ViewModelBase.cs" Line="17" Column="12" />
     </Files>
     <Pads>
@@ -14,10 +14,15 @@
           <Node name="TaxCalculator" expanded="True">
             <Node name="TaxCalculator" expanded="True">
               <Node name="ViewModels" expanded="True">
-                <Node name="MainPageViewModel.cs" selected="True" />
+                <Node name="ViewModelBase.cs" selected="True" />
               </Node>
               <Node name="App.xaml" expanded="True" />
               <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+            <Node name="TaxCalculator.Android" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="values" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

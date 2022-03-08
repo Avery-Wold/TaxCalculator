@@ -28,6 +28,7 @@ foreground;obj/Debug/res/mipmap-anydpi-v26/icon.xml
 foreground;obj/Debug/res/mipmap-anydpi-v26/icon_round.xml
 FrameLayout;/Users/averywold/Projects/TaxCalculator/TaxCalculator.Android/obj/Debug/lp/45/jl/res/layout/bottomtablayout.xml
 item;/Users/averywold/Projects/TaxCalculator/TaxCalculator.Android/obj/Debug/lp/45/jl/res/values/styles.xml
+item;obj/Debug/res/values/styles.xml
 LinearLayout;/Users/averywold/Projects/TaxCalculator/TaxCalculator.Android/obj/Debug/lp/45/jl/res/layout/bottomtablayout.xml
 paths;/Users/averywold/Projects/TaxCalculator/TaxCalculator.Android/obj/Debug/lp/44/jl/res/xml/xamarin_essentials_fileprovider_file_paths.xml
 resources;/Users/averywold/Projects/TaxCalculator/TaxCalculator.Android/obj/Debug/lp/45/jl/res/values/attrs.xml
