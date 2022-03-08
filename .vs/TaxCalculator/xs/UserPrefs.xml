@@ -1,23 +1,30 @@
 ﻿<Properties StartupConfiguration="{5491703E-34BA-439F-B7B7-0D8C029288C3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/ViewModels/ViewModelBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/Services/TaxService.cs">
     <Files>
-      <File FileName="TaxCalculator/App.xaml.cs" Line="16" Column="17" />
+      <File FileName="TaxCalculator/App.xaml.cs" Line="14" Column="14" />
       <File FileName="TaxCalculator/MainPage.xaml.cs" Line="12" Column="31" />
-      <File FileName="TaxCalculator/MainPage.xaml" Line="28" Column="56" />
+      <File FileName="TaxCalculator/MainPage.xaml" Line="5" Column="36" />
       <File FileName="TaxCalculator/Bootstrapper.cs" Line="1" Column="1" />
-      <File FileName="TaxCalculator/ViewModels/MainPageViewModel.cs" Line="32" Column="43" />
-      <File FileName="TaxCalculator/ViewModels/ViewModelBase.cs" Line="17" Column="12" />
+      <File FileName="TaxCalculator/ViewModels/MainPageViewModel.cs" Line="9" Column="38" />
+      <File FileName="TaxCalculator/ViewModels/ViewModelBase.cs" Line="9" Column="6" />
+      <File FileName="TaxCalculator/Views/TaxCalculatorPage.xaml" Line="1" Column="1" />
+      <File FileName="TaxCalculator/Views/TaxCalculatorPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="TaxCalculator/ViewModels/TaxCalculatorViewModel.cs" Line="1" Column="1" />
+      <File FileName="TaxCalculator/Services/ITaxService.cs" Line="1" Column="1" />
+      <File FileName="TaxCalculator/Services/TaxService.cs" Line="8" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TaxCalculator" expanded="True">
             <Node name="TaxCalculator" expanded="True">
-              <Node name="ViewModels" expanded="True">
-                <Node name="ViewModelBase.cs" selected="True" />
+              <Node name="Services" expanded="True">
+                <Node name="TaxService.cs" selected="True" />
               </Node>
-              <Node name="App.xaml" expanded="True" />
-              <Node name="MainPage.xaml" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="TaxCalculatorPage.xaml" expanded="True" />
+              </Node>
             </Node>
             <Node name="TaxCalculator.Android" expanded="True">
               <Node name="Resources" expanded="True">

@@ -8,9 +8,9 @@ namespace TaxCalculator.ViewModels
     {
         private readonly ITaxService _taxService;
 
-        public MainPageViewModel()
+        public MainPageViewModel(TaxService taxService)
         {
-
+            _taxService = taxService;
         }
 
         public string SelectOptionLabel

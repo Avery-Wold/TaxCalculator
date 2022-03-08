@@ -23,7 +23,7 @@
                 BackgroundColor="#7c21f3"
                 TextColor="White"
                 Padding="20"
-                    FontSize="Medium"/>
+                FontSize="Medium"/>
         
             <Button Text="{Binding TaxRateForOrderLabel}" 
                 Command="{Binding GoToTaxOrderPage}"

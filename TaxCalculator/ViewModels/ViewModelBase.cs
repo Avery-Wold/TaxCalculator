@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace TaxCalculator.ViewModels
 {
-    public class ViewModelBase
+    public class ViewModelBase : INotifyPropertyChanged
     {
         public INavigation Navigation { get; set; }
 

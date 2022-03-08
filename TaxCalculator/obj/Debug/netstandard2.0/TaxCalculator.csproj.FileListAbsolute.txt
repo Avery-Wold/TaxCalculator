@@ -13,3 +13,4 @@
 /Users/averywold/Projects/TaxCalculator/TaxCalculator/obj/Debug/netstandard2.0/ref/TaxCalculator.dll
 /Users/averywold/Projects/TaxCalculator/TaxCalculator/obj/Debug/netstandard2.0/TaxCalculator.pdb
 /Users/averywold/Projects/TaxCalculator/TaxCalculator/obj/Debug/netstandard2.0/TaxCalculator.csproj.AssemblyReference.cache
+/Users/averywold/Projects/TaxCalculator/TaxCalculator/obj/Debug/netstandard2.0/Views/TaxCalculatorPage.xaml.g.cs

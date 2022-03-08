@@ -5,7 +5,7 @@ using Taxjar;
 
 namespace TaxCalculator.Services
 {
-    public class TaxService
+    public class TaxService : ITaxService
     {
 		public async Task<TaxOrderResult> GetTaxForOrder(TaxOrder taxOrder)
 		{
