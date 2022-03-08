@@ -4,6 +4,40 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TaxCalculator.Views.TaxCalculatorPage">
     <ContentPage.Content>
-        
+        <StackLayout VerticalOptions="StartAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    Spacing="5"
+                    Margin="0">
+
+            <Label
+                Text="{Binding EnterZipLabel}"
+                Padding="20,30,20,30"
+                FontSize="Title"
+                HorizontalTextAlignment="Center"
+                TextColor="White"/>
+
+            <Entry Text="{Binding Location.Zip}"
+                BackgroundColor="White"
+                Placeholder="Required"
+                PlaceholderColor="Gray"
+                TextColor="Black"
+                Margin="0,0,0,20"/>
+
+            <Button Text="{Binding GetTaxRateLabel}"
+                Command="{Binding GetTaxRate}"
+                BackgroundColor="#7c21f3"
+                TextColor="White"
+                Padding="20"
+                FontSize="Medium"/>
+            
+            <Frame IsVisible="{Binding IsRefreshing}"
+                BackgroundColor="Transparent"
+                WidthRequest="50"
+                HeightRequest="50"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <ActivityIndicator Color="White" IsRunning="True" />
+            </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

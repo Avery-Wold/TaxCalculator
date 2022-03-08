@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using TaxCalculator.Services;
+using TaxCalculator.Views;
 using Xamarin.Forms;
 
 namespace TaxCalculator.ViewModels
@@ -39,8 +40,8 @@ namespace TaxCalculator.ViewModels
 
         public ICommand GoToTaxRatesPage => new Command(async () =>
         {
-            //var taxCalculatorPage = Resolver.Resolve<TaxCalculatorPage>();
-            //await Navigation.PushAsync(taxCalculatorPage);
+            var taxCalculatorPage = Resolver.Resolve<TaxCalculatorPage>();
+            await Navigation.PushAsync(taxCalculatorPage);
         });
     }
 }

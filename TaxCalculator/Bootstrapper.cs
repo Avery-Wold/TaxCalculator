@@ -2,6 +2,7 @@
 using Autofac;
 using TaxCalculator.Services;
 using TaxCalculator.ViewModels;
+using TaxCalculator.Views;
 
 namespace TaxCalculator
 {
@@ -14,12 +15,11 @@ namespace TaxCalculator
 			containerBuilder.RegisterAssemblyTypes(typeof(App).Assembly).Where(x => x.IsSubclassOf(typeof(ViewModelBase)));
 
 			containerBuilder.RegisterType<MainPage>();
-			//containerBuilder.RegisterType<TaxCalculatorPage>();
+			containerBuilder.RegisterType<TaxCalculatorPage>();
 			//containerBuilder.RegisterType<TaxOrderPage>();
 
-			//Service Injections
+			//Service Injection
 			containerBuilder.RegisterType<TaxService>();
-			//containerBuilder.RegisterType<MessageService>();
 
 			var container = containerBuilder.Build();
 			Resolver.Initialize(container);
