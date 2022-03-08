@@ -1,30 +1,31 @@
 ﻿<Properties StartupConfiguration="{5491703E-34BA-439F-B7B7-0D8C029288C3}|Default">
-  <MonoDevelop.Ide.ItemProperties.TaxCalculator.iOS FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/ViewModels/ViewModelBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/ViewModels/MainPageViewModel.cs">
     <Files>
-      <File FileName="TaxCalculator/Services/ITaxService.cs" Line="10" Column="70" />
-      <File FileName="TaxCalculator/Services/TaxService.cs" Line="64" Column="1" />
-      <File FileName="TaxCalculator/Settings.cs" Line="8" Column="59" />
-      <File FileName="TaxCalculator/ViewModels/ViewModelBase.cs" Line="1" Column="1" />
+      <File FileName="TaxCalculator/App.xaml.cs" Line="19" Column="1" />
+      <File FileName="TaxCalculator/MainPage.xaml.cs" Line="13" Column="4" />
+      <File FileName="TaxCalculator/MainPage.xaml" Line="28" Column="36" />
+      <File FileName="TaxCalculator/Bootstrapper.cs" Line="1" Column="1" />
+      <File FileName="TaxCalculator/ViewModels/MainPageViewModel.cs" Line="11" Column="34" />
+      <File FileName="TaxCalculator/ViewModels/ViewModelBase.cs" Line="17" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TaxCalculator" expanded="True">
             <Node name="TaxCalculator" expanded="True">
-              <Node name="Services" expanded="True" />
               <Node name="ViewModels" expanded="True">
-                <Node name="ViewModelBase.cs" selected="True" />
+                <Node name="MainPageViewModel.cs" selected="True" />
               </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.TaxCalculator FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.TaxCalculator.Android FirstBuild="True" PreferredExecutionTarget="Android.Android_Accelerated_x86_X86_google_apis" />
+  <MonoDevelop.Ide.ItemProperties.TaxCalculator.Android Xamarin.HotReload.DebuggerTimeoutException.TaxCalculator.Android.HideInfoBar="True" PreferredExecutionTarget="Android.0B121FDD4006LT" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

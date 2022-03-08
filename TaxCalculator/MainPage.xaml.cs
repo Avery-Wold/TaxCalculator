@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TaxCalculator.ViewModels;
 using Xamarin.Forms;
 
 namespace TaxCalculator
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-    }
+		public MainPage(MainPageViewModel viewModel)
+		{
+			InitializeComponent();
+			viewModel.Navigation = Navigation;
+			BindingContext = viewModel;
+		}
+	}
 }

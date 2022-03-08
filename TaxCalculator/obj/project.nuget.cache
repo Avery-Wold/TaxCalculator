@@ -1,14 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "xBMs1bU1gzL2H1464nnIazPuu9ZZ6al1gr97NYMMBMmoCEc2SJl0T1sovp24QE7rXGi2ZAjK2x8AWfqVe1++qw==",
+  "dgSpecHash": "ipTndlW+GR2jMK5r2YKzcl0nJ9hL7/1puYjAoJLCfYermy3ESK/6nMGXVQs2aCThreAah+d2WlEoQJm6mjlyGg==",
   "success": true,
   "projectFilePath": "/Users/averywold/Projects/TaxCalculator/TaxCalculator/TaxCalculator.csproj",
   "expectedPackageFiles": [
+    "/Users/averywold/.nuget/packages/autofac/6.3.0/autofac.6.3.0.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.0/microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "/Users/averywold/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/averywold/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
     "/Users/averywold/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
     "/Users/averywold/.nuget/packages/restsharp/106.12.0/restsharp.106.12.0.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/Users/averywold/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.3/system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "/Users/averywold/.nuget/packages/system.threading.tasks.extensions/4.5.2/system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "/Users/averywold/.nuget/packages/taxjar/3.3.2/taxjar.3.3.2.nupkg.sha512",
     "/Users/averywold/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
     "/Users/averywold/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"

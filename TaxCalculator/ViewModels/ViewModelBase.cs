@@ -7,13 +7,13 @@ namespace TaxCalculator.ViewModels
 {
     public class ViewModelBase
     {
-        protected INavigation Navigation => Application.Current.MainPage.Navigation;
+        public INavigation Navigation { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
     }
 }

@@ -9,8 +9,8 @@ namespace TaxCalculator
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            Bootstrapper.Initialize();
+            MainPage = new NavigationPage(Resolver.Resolve<MainPage>());
         }
 
         protected override void OnStart()
