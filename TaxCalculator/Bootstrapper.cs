@@ -15,8 +15,8 @@ namespace TaxCalculator
 			containerBuilder.RegisterAssemblyTypes(typeof(App).Assembly).Where(x => x.IsSubclassOf(typeof(ViewModelBase)));
 
 			containerBuilder.RegisterType<MainPage>();
-			containerBuilder.RegisterType<TaxCalculatorPage>();
-			//containerBuilder.RegisterType<TaxOrderPage>();
+			containerBuilder.RegisterType<TaxCalculatorView>();
+			containerBuilder.RegisterType<TaxOrderView>();
 
 			//Service Injection
 			containerBuilder.RegisterType<TaxService>();

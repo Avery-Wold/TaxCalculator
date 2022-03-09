@@ -21,8 +21,7 @@ namespace TaxCalculator.ViewModels
             string title,
             string message,
             string accept = "Ok",
-            string cancel = null,
-            Exception exception = null)
+            string cancel = null)
         {
             if (string.IsNullOrWhiteSpace(cancel))
             {

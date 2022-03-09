@@ -20,9 +20,9 @@ namespace TaxCalculator.ViewModels
         public ICommand GetTaxRate => new Command(async () =>
         {
             IsRefreshing = true;
+
             try
             {
-                //IsRefreshing = true;
                 TaxRateResult = await _taxService.GetTaxRateForLocation(Location);
                 IsRefreshing = false;
                 LocationDetailsVisible = true;
@@ -75,22 +75,6 @@ namespace TaxCalculator.ViewModels
             {
                 _isRefreshing = value;
                 OnPropertyChanged(nameof(IsRefreshing));
-            }
-        }
-
-        public string EnterZipLabel
-        {
-            get
-            {
-                return "Enter Zip Code For Location:";
-            }
-        }
-
-        public string GetTaxRateLabel
-        {
-            get
-            {
-                return "Get Tax Rates";
             }
         }
     }

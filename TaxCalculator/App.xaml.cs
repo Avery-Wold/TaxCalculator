@@ -14,6 +14,9 @@ namespace TaxCalculator
             {
                 BarBackgroundColor = Color.FromHex("#7c21f3")
             };
+
+            if (Device.RuntimePlatform == Device.iOS)
+                ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
         }
 
         protected override void OnStart()

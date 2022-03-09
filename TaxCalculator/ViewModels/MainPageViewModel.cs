@@ -14,34 +14,16 @@ namespace TaxCalculator.ViewModels
             _taxService = taxService;
         }
 
-        public string SelectOptionLabel
-        {
-            get
-            {
-                return "Select an option to calculate tax";
-            }
-        }
-
-        public string TaxRateLocationLabel
-        {
-            get
-            {
-                return "Get Tax Rates For Location";
-            }
-        }
-
-        public string TaxRateForOrderLabel
-        {
-            get
-            {
-                return "Calculate Tax For Order";
-            }
-        }
-
         public ICommand GoToTaxRatesPage => new Command(async () =>
         {
-            var taxCalculatorPage = Resolver.Resolve<TaxCalculatorPage>();
+            var taxCalculatorPage = Resolver.Resolve<TaxCalculatorView>();
             await Navigation.PushAsync(taxCalculatorPage);
+        });
+
+        public ICommand GoToTaxOrderPage => new Command(async () =>
+        {
+            var taxOrderPage = Resolver.Resolve<TaxOrderView>();
+            await Navigation.PushAsync(taxOrderPage);
         });
     }
 }

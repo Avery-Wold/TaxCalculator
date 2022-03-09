@@ -4,35 +4,40 @@
              x:Class="TaxCalculator.MainPage"
              Title="Tax Calculator">
 
-     <StackLayout>
-
-        <Label
-            Text="{Binding SelectOptionLabel}"
-            Padding="20,30,20,30"
-            FontSize="Title"
-            HorizontalTextAlignment="Center"
-            TextColor="White"/>
-
-        <StackLayout
+     <StackLayout Margin="30">
+         <StackLayout
             HorizontalOptions="Center"
             Orientation="Vertical"
             Spacing="20">
 
-            <Button Text="{Binding TaxRateLocationLabel}"
-                Command="{Binding GoToTaxRatesPage}"
-                BackgroundColor="#7c21f3"
-                TextColor="White"
-                Padding="20"
-                FontSize="Medium"/>
+            <Label
+                Text="Select an option to calculate tax"
+                Padding="10,30,10,30"
+                FontSize="Title"
+                HorizontalTextAlignment="Center"
+                TextColor="White"/>
+
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"
+                Spacing="20"
+                >
+
+                <Button Text="Get Tax Rates For Location"
+                    Command="{Binding GoToTaxRatesPage}"
+                    BackgroundColor="#7c21f3"
+                    TextColor="White"
+                    Padding="20"
+                    FontSize="Medium"/>
         
-            <Button Text="{Binding TaxRateForOrderLabel}" 
-                Command="{Binding GoToTaxOrderPage}"
-                BackgroundColor="#7c21f3"
-                TextColor="White"
-                Padding="20"
-                FontSize="Medium"/>
+                <Button Text="Calculate Tax For Order" 
+                    Command="{Binding GoToTaxOrderPage}"
+                    BackgroundColor="#7c21f3"
+                    TextColor="White"
+                    Padding="20"
+                    FontSize="Medium"/>
+            </StackLayout>
         </StackLayout>
-        
     </StackLayout>
 
 </ContentPage>

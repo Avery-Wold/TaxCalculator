@@ -10,6 +10,8 @@ namespace TaxCalculator
 			InitializeComponent();
 			viewModel.Navigation = Navigation;
 			BindingContext = viewModel;
+			NavigationPage.SetBackButtonTitle(this, "");
+			BackgroundColor = Color.FromHex("#312F31");
 		}
 	}
 }

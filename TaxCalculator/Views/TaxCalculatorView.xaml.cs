@@ -6,15 +6,15 @@ using Xamarin.Forms.Xaml;
 
 namespace TaxCalculator.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TaxCalculatorPage : ContentPage
+	public partial class TaxCalculatorView : ContentPage
     {
-		public TaxCalculatorPage(TaxCalculatorViewModel viewModel)
+		public TaxCalculatorView(TaxCalculatorViewModel viewModel)
 		{
 			InitializeComponent();
 			viewModel.Navigation = Navigation;
 			BindingContext = viewModel;
 			Title = "Get Tax Rate";
+			BackgroundColor = Color.FromHex("#312F31");
 		}
 	}
 }
