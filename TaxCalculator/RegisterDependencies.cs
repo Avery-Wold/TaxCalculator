@@ -6,7 +6,7 @@ using TaxCalculator.Views;
 
 namespace TaxCalculator
 {
-    public static class Bootstrapper
+    public static class RegisterDependencies
     {
 		public static void Initialize()
 		{

@@ -9,7 +9,7 @@ namespace TaxCalculator
         public App()
         {
             InitializeComponent();
-            Bootstrapper.Initialize();
+            RegisterDependencies.Initialize();
             MainPage = new NavigationPage(Resolver.Resolve<MainPage>())
             {
                 BarBackgroundColor = Color.FromHex("#7c21f3")
