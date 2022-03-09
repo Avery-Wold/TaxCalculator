@@ -11,15 +11,71 @@ namespace TaxCalculator.ViewModels
     {
         private readonly ITaxService _taxService;
 
-        public TaxRateResult TaxRateResult { get; set; }
-        public Location Location { get; set; }
-
-        public bool IsRefreshing { get; set; }
-
         public TaxCalculatorViewModel(TaxService taxService)
         {
             _taxService = taxService;
             Location = new Location();
+        }
+
+        public ICommand GetTaxRate => new Command(async () =>
+        {
+            IsRefreshing = true;
+            try
+            {
+                //IsRefreshing = true;
+                TaxRateResult = await _taxService.GetTaxRateForLocation(Location);
+                IsRefreshing = false;
+                LocationDetailsVisible = true;
+            }
+            catch (TaxjarException e)
+            {
+                IsRefreshing = false;
+                await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
+            }
+        });
+
+        private TaxRateResult _taxRateResult;
+        public TaxRateResult TaxRateResult
+        {
+            get => _taxRateResult;
+            set
+            {
+                _taxRateResult = value;
+                OnPropertyChanged(nameof(TaxRateResult));
+            }
+        }
+
+        private Location _location;
+        public Location Location
+        {
+            get => _location;
+            set
+            {
+                _location = value;
+                OnPropertyChanged(nameof(Location));
+            }
+        }
+
+        private bool _locationDetailsVisible = false;
+        public bool LocationDetailsVisible
+        {
+            get => _locationDetailsVisible;
+            set
+            {
+                _locationDetailsVisible = value;
+                OnPropertyChanged(nameof(LocationDetailsVisible));
+            }
+        }
+
+        private bool _isRefreshing = false;
+        public bool IsRefreshing
+        {
+            get => _isRefreshing;
+            set
+            {
+                _isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
         }
 
         public string EnterZipLabel
@@ -37,20 +93,5 @@ namespace TaxCalculator.ViewModels
                 return "Get Tax Rates";
             }
         }
-
-        public ICommand GetTaxRate => new Command(async () =>
-        {
-            try
-            {
-                IsRefreshing = true;
-                TaxRateResult = await _taxService.GetTaxRateForLocation(Location);
-                IsRefreshing = false;
-            }
-            catch (TaxjarException e)
-            {
-                await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
-            }
-
-        });
     }
 }

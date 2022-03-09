@@ -1,27 +1,36 @@
 ﻿<Properties StartupConfiguration="{5491703E-34BA-439F-B7B7-0D8C029288C3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/Views/TaxCalculatorPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaxCalculator/Models/TaxRateResult.cs">
     <Files>
-      <File FileName="TaxCalculator/MainPage.xaml" Line="9" Column="10" />
+      <File FileName="TaxCalculator/MainPage.xaml" Line="16" Column="9" />
       <File FileName="TaxCalculator/ViewModels/MainPageViewModel.cs" Line="46" Column="6" />
-      <File FileName="TaxCalculator/Views/TaxCalculatorPage.xaml" Line="15" Column="33" />
-      <File FileName="TaxCalculator/ViewModels/TaxCalculatorViewModel.cs" Line="33" Column="38" />
-      <File FileName="TaxCalculator/Views/TaxCalculatorPage.xaml.cs" Line="9" Column="1" />
-      <File FileName="TaxCalculator/Bootstrapper.cs" Line="21" Column="23" />
+      <File FileName="TaxCalculator/Views/TaxCalculatorPage.xaml" Line="78" Column="1" />
+      <File FileName="TaxCalculator/ViewModels/TaxCalculatorViewModel.cs" Line="15" Column="36" />
+      <File FileName="TaxCalculator/Bootstrapper.cs" />
+      <File FileName="TaxCalculator/Services/TaxService.cs" Line="65" Column="1" />
+      <File FileName="TaxCalculator/Views/TaxCalculatorPage.xaml.cs" Line="9" Column="51" />
+      <File FileName="TaxCalculator/ViewModels/ViewModelBase.cs" Line="18" Column="10" />
+      <File FileName="TaxCalculator/Models/TaxRateResult.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TaxCalculator" expanded="True">
             <Node name="TaxCalculator" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="TaxRateResult.cs" selected="True" />
+              </Node>
               <Node name="Services" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="TaxCalculatorPage.xaml" expanded="True">
-                  <Node name="TaxCalculatorPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="TaxCalculatorPage.xaml" expanded="True" />
               </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>LocationDetailsVisible</Value>
         </State>
       </Pad>
     </Pads>

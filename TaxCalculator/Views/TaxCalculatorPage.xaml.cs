@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 namespace TaxCalculator.Views
 {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TaxCalculatorPage : ContentPage
     {
 		public TaxCalculatorPage(TaxCalculatorViewModel viewModel)

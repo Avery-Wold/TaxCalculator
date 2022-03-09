@@ -4,40 +4,199 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TaxCalculator.Views.TaxCalculatorPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" 
-                    HorizontalOptions="CenterAndExpand"
-                    Spacing="5"
-                    Margin="0">
+        <StackLayout Margin="30">
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Vertical"
+                Spacing="20">
+                <Label
+                    Text="{Binding EnterZipLabel}"
+                    Padding="0,0,0,20"
+                    FontSize="Title"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"/>
 
-            <Label
-                Text="{Binding EnterZipLabel}"
-                Padding="20,30,20,30"
-                FontSize="Title"
-                HorizontalTextAlignment="Center"
-                TextColor="White"/>
+                <Entry Text="{Binding Location.Zip}"
+                    BackgroundColor="White"
+                    Placeholder="Required"
+                    PlaceholderColor="LightGray"
+                    TextColor="Black"
+                    Keyboard="Numeric"/>
 
-            <Entry Text="{Binding Location.Zip}"
-                BackgroundColor="White"
-                Placeholder="Required"
-                PlaceholderColor="Gray"
-                TextColor="Black"
-                Margin="0,0,0,20"/>
+                <Button Text="{Binding GetTaxRateLabel}"
+                    Command="{Binding GetTaxRate}"
+                    BackgroundColor="#7c21f3"
+                    TextColor="White"
+                    Padding="20"
+                    FontSize="Medium"/>
 
-            <Button Text="{Binding GetTaxRateLabel}"
-                Command="{Binding GetTaxRate}"
-                BackgroundColor="#7c21f3"
-                TextColor="White"
-                Padding="20"
-                FontSize="Medium"/>
-            
+            </StackLayout>
+
             <Frame IsVisible="{Binding IsRefreshing}"
                 BackgroundColor="Transparent"
                 WidthRequest="50"
                 HeightRequest="50"
                 VerticalOptions="Center"
                 HorizontalOptions="Center">
-                <ActivityIndicator Color="White" IsRunning="True" />
+
+                <ActivityIndicator Color="White" IsRunning="True"/>
             </Frame>
+
+            <ScrollView VerticalOptions="FillAndExpand" IsVisible="{Binding LocationDetailsVisible}">
+                <StackLayout IsVisible="{Binding LocationDetailsVisible}" HorizontalOptions="FillAndExpand">
+                    <Label
+                        Text="LOCATION:"
+                        Padding="20,20,0,10"
+                        FontSize="Large"
+                        HorizontalTextAlignment="Start"
+                        TextColor="White"/>
+
+                    <Grid ColumnSpacing="0"
+                        Margin="30,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Text="City:"
+                            FontSize="Medium"
+                            Grid.Column="0"
+                            Grid.Row="0"/>
+                        <Label Text="{Binding TaxRateResult.Location.City}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="0"/>
+
+                        <Label Text="State:"
+                            FontSize="Medium"
+                            Grid.Column="0"
+                            Grid.Row="1"/>
+                        <Label Text="{Binding TaxRateResult.Location.State}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="1"/>
+
+                        <Label Text="Country:"
+                            Grid.Column="0"
+                            FontSize="Medium"
+                            Grid.Row="2"/>
+                        <Label Text="{Binding TaxRateResult.Location.Country}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="2"/>
+
+                        <Label Text="State:"
+                            Grid.Column="0"
+                            FontSize="Medium"
+                            Grid.Row="3"/>
+                        <Label Text="{Binding TaxRateResult.Location.Zip}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="3"/>
+                    </Grid>
+
+                    <Label
+                        Text="TAX RATE:"
+                        Padding="20,20,0,10"
+                        FontSize="Large"
+                        HorizontalTextAlignment="Start"
+                        TextColor="White"/>
+
+                    <Grid ColumnSpacing="0"
+                        Margin="30,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Text="Combined Rate:"
+                            FontSize="Medium"
+                            Grid.Column="0"
+                            Grid.Row="0" />
+                        <Label Text="{Binding TaxRateResult.CombinedRate}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="0" />
+
+                        <Label Text="City Rate:"
+                            FontSize="Medium"
+                            Grid.Column="0"
+                            Grid.Row="1" />
+                        <Label Text="{Binding TaxRateResult.CityRate}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="1" />
+
+                        <Label Text="State Rate:"
+                            FontSize="Medium"
+                            Grid.Column="0"
+                            Grid.Row="2" />
+                        <Label Text="{Binding TaxRateResult.StateRate}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="2" />
+
+                        <Label Text="County Rate:"
+                            Grid.Column="0"
+                            FontSize="Medium"
+                            Grid.Row="3" />
+                        <Label Text="{Binding TaxRateResult.CountyRate}"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="3" />
+
+                        <Label Text="Combined Dist Rate:"
+                            Grid.Column="0"
+                            FontSize="Medium"
+                            Grid.Row="4" />
+                        <Label Text="{Binding TaxRateResult.CombinedDistrictRate}"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="EndAndExpand"
+                            Grid.Column="1"
+                            TextColor="White"
+                            FontSize="Medium"
+                            Padding="0,0,10,0"
+                            Grid.Row="4" />
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
