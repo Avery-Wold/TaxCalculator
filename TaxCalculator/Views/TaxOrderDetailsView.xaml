@@ -46,7 +46,6 @@
                     Grid.Row="0"
                     TextColor="{StaticResource TextColor}"/>
                 <Label Text="{Binding TaxOrderResult.OrderTotalAmount}"
-                       x:Name="OrderTotalLabel"
                     HorizontalOptions="EndAndExpand"
                     VerticalTextAlignment="Center"
                     Grid.Column="1"

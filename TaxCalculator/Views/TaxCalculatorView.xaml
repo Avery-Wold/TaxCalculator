@@ -18,7 +18,7 @@
                 Spacing="20">
                 <Label
                     Text="Enter Zip Code For Location:"
-                    Padding="10,30,10,30"
+                    Padding="10,0,10,20"
                     FontSize="Title"
                     HorizontalTextAlignment="Center"
                     TextColor="{StaticResource TextColor}"/>

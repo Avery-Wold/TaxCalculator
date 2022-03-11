@@ -10,7 +10,7 @@ namespace TaxCalculator.Views
 			InitializeComponent();
 			viewModel.Navigation = Navigation;
 			BindingContext = viewModel;
-			Title = "Get Tax For Order";
+			Title = "Get Tax Rate For Order";
 			BackgroundColor = Color.FromHex("#312F31");
 		}
 	}

@@ -14,8 +14,7 @@
         <StackLayout Margin="30">
             <StackLayout
                 HorizontalOptions="StartAndExpand"
-                Orientation="Horizontal"
-                Spacing="20">
+                Orientation="Horizontal">
                 <Label
                     Text="From Location"
                     Padding="0,0,0,10"
