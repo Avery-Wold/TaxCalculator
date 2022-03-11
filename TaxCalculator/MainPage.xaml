@@ -3,7 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaxCalculator.MainPage"
              Title="Tax Calculator">
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ButtonColor">#7c21f3</Color>
+            <Color x:Key="TextColor">#FFFFFF</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
      <StackLayout Margin="30">
          <StackLayout
             HorizontalOptions="Center"
@@ -15,7 +20,7 @@
                 Padding="10,30,10,30"
                 FontSize="Title"
                 HorizontalTextAlignment="Center"
-                TextColor="White"/>
+                TextColor="{StaticResource TextColor}"/>
 
             <StackLayout
                 HorizontalOptions="FillAndExpand"
@@ -24,16 +29,16 @@
                 >
 
                 <Button Text="Get Tax Rates For Location"
-                    Command="{Binding GoToTaxRatesPage}"
-                    BackgroundColor="#7c21f3"
-                    TextColor="White"
+                    Command="{Binding GoToTaxRatesView}"
+                    BackgroundColor="{StaticResource ButtonColor}"
+                    TextColor="{StaticResource TextColor}"
                     Padding="20"
                     FontSize="Medium"/>
         
                 <Button Text="Calculate Tax For Order" 
-                    Command="{Binding GoToTaxOrderPage}"
-                    BackgroundColor="#7c21f3"
-                    TextColor="White"
+                    Command="{Binding GoToTaxOrderView}"
+                    BackgroundColor="{StaticResource ButtonColor}"
+                    TextColor="{StaticResource TextColor}"
                     Padding="20"
                     FontSize="Medium"/>
             </StackLayout>

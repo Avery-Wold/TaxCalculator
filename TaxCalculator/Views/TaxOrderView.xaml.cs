@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using TaxCalculator.ViewModels;
+﻿using TaxCalculator.ViewModels;
 using Xamarin.Forms;
 
 namespace TaxCalculator.Views
@@ -12,6 +10,7 @@ namespace TaxCalculator.Views
 			InitializeComponent();
 			viewModel.Navigation = Navigation;
 			BindingContext = viewModel;
+			Title = "Get Tax For Order";
 			BackgroundColor = Color.FromHex("#312F31");
 		}
 	}

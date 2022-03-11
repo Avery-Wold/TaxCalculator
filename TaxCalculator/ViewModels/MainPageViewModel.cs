@@ -14,16 +14,16 @@ namespace TaxCalculator.ViewModels
             _taxService = taxService;
         }
 
-        public ICommand GoToTaxRatesPage => new Command(async () =>
+        public ICommand GoToTaxRatesView => new Command(async () =>
         {
-            var taxCalculatorPage = Resolver.Resolve<TaxCalculatorView>();
-            await Navigation.PushAsync(taxCalculatorPage);
+            var taxCalculatorView = Resolver.Resolve<TaxCalculatorView>();
+            await Navigation.PushAsync(taxCalculatorView);
         });
 
-        public ICommand GoToTaxOrderPage => new Command(async () =>
+        public ICommand GoToTaxOrderView => new Command(async () =>
         {
-            var taxOrderPage = Resolver.Resolve<TaxOrderView>();
-            await Navigation.PushAsync(taxOrderPage);
+            var taxOrderView = Resolver.Resolve<TaxOrderView>();
+            await Navigation.PushAsync(taxOrderView);
         });
     }
 }

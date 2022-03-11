@@ -10,32 +10,60 @@ using TaxCalculatorApp.Models;
 using Xamarin.Forms;
 using Autofac;
 using Autofac.Extras.Moq;
+using System.Windows.Input;
+using System.Reflection;
 
 namespace TaxCalculator.Tests.ViewModelTests
 {
     [TestFixture]
     public class MainPageViewModelTests
     {
-        [Test]
-        public void MainPageViewModel_WhenSuccessfull_TaxRatesCommandCanExecute()
-        {
-            using (var mock = AutoMock.GetLoose())
-            {
-                var viewModel = mock.Create<MainPageViewModel>();
+        private Mock<TaxService> _taxService;
 
-                viewModel.GoToTaxRatesPage.CanExecute(true);
-            }
+        [SetUp]
+        public void Setup()
+        {
+            MockForms.Init();
+            _taxService = new Mock<TaxService>();
         }
 
         [Test]
-        public void MainPageViewModel_WhenSuccessfull_TaxOrdersCommandCanExecute()
+        public void AppIsRunning()
         {
-            using (var mock = AutoMock.GetLoose())
-            {
-                var viewModel = mock.Create<MainPageViewModel>();
+            // Act
+            var taxServiceMock = _taxService.Object;
 
-                viewModel.GoToTaxOrderPage.CanExecute(true);
-            }
+            // Arrange
+            var viewModel = new MainPageViewModel(taxServiceMock);
+
+            // Assert
+            Assert.NotNull(viewModel);
+        }
+
+        [Test]
+        public void MainPageModel_OnStart_TaxRatesCommandCanExecute()
+        {
+            // Act
+            var taxServiceMock = _taxService.Object;
+
+            // Arrange
+            var viewModel = new MainPageViewModel(taxServiceMock);
+
+            // Assert
+            viewModel.GoToTaxRatesView.CanExecute(true);
+        }
+
+        [Test]
+        public void MainPageViewModel_OnStart_TaxOrdersCommandCanExecute()
+        {
+            // Act
+            var taxServiceMock = _taxService.Object;
+
+            // Arrange
+            var viewModel = new MainPageViewModel(taxServiceMock);
+
+            // Assert
+            viewModel.GoToTaxOrderView.CanExecute(true);
         }
     }
 }

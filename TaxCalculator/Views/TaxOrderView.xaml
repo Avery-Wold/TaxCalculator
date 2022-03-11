@@ -3,7 +3,285 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TaxCalculator.Views.TaxOrderView">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ButtonColor">#7c21f3</Color>
+            <Color x:Key="TextColor">#FFFFFF</Color>
+            <Color x:Key="LabelColor">#B5B4B5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Margin="30">
+            <StackLayout
+                HorizontalOptions="StartAndExpand"
+                Orientation="Horizontal"
+                Spacing="20">
+                <Label
+                    Text="From Location"
+                    Padding="0,0,0,10"
+                    FontSize="Title"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+
+            <Grid ColumnSpacing="20"
+                    RowSpacing="10"
+                    Margin="30,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Street:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.FromStreet}"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Placeholder="Street"
+                    PlaceholderColor="LightGray"
+                    BackgroundColor="White"
+                    TextColor="Black"/>
+
+                <Label Text="City:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.FromCity}"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Placeholder="City"
+                    PlaceholderColor="LightGray"
+                    BackgroundColor="White"
+                    TextColor="Black"/>
+
+                <Label Text="State:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.FromState}"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Placeholder="State"
+                    PlaceholderColor="LightGray"
+                    BackgroundColor="White"
+                    TextColor="Black"/>
+
+                <Label Text="Zip:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.FromZip}"
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    Placeholder="Zip Code"
+                    PlaceholderColor="LightGray"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Keyboard="Numeric"/>
+
+                <Label Text="Country:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.FromCountry}"
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    Placeholder="Country"
+                    PlaceholderColor="LightGray"
+                    BackgroundColor="White"
+                    TextColor="Black"/>
+            </Grid>
+
+            <StackLayout
+                    HorizontalOptions="StartAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="20">
+                <Label
+                    Text="To Location"
+                    Padding="0,20,0,10"
+                    FontSize="Title"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+
+            <Grid ColumnSpacing="20"
+                    RowSpacing="10"
+                    Margin="30,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Street:"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        Padding="-20,0,20,0"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.ToStreet}"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Placeholder="Street"
+                        PlaceholderColor="LightGray"
+                        BackgroundColor="White"
+                        TextColor="Black"/>
+
+                <Label Text="City:"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        Padding="-20,0,20,0"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.ToCity}"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Placeholder="City"
+                        PlaceholderColor="LightGray"
+                        BackgroundColor="White"
+                        TextColor="Black"/>
+
+                <Label Text="State:"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        Padding="-20,0,20,0"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.ToState}"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Placeholder="State"
+                        PlaceholderColor="LightGray"
+                        BackgroundColor="White"
+                        TextColor="Black"/>
+
+                <Label Text="Zip:"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        Padding="-20,0,20,0"
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.ToZip}"
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Placeholder="Zip Code"
+                        PlaceholderColor="LightGray"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        Keyboard="Numeric"/>
+
+                <Label Text="Country:"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        Padding="-20,0,20,0"
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.ToCountry}"
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Placeholder="Country"
+                        PlaceholderColor="LightGray"
+                        BackgroundColor="White"
+                        TextColor="Black"/>
+            </Grid>
+
+            <StackLayout
+                    HorizontalOptions="StartAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="20">
+                <Label
+                        Text="Order Details"
+                        Padding="0,20,0,10"
+                        FontSize="Title"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+
+            <Grid ColumnSpacing="20"
+                    RowSpacing="10"
+                    Margin="30,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Amount:"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        Padding="-20,0,20,0"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.Amount}"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        Keyboard="Numeric"/>
+
+                <Label Text="Shipping:"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        Padding="-20,0,20,0"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        TextColor="{StaticResource TextColor}"/>
+                <Entry Text="{Binding TaxOrder.Shipping}"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        Keyboard="Numeric"/>
+            </Grid>
+
+            <StackLayout
+                    Padding="20">
+                <Button Text="Get Tax Rates"
+                    Command="{Binding GetTaxForOrder}"
+                    BackgroundColor="{StaticResource ButtonColor}"
+                    TextColor="{StaticResource TextColor}"
+                    Padding="20"
+                    FontSize="Medium"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -3,6 +3,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TaxCalculator.Views.TaxCalculatorView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ButtonColor">#7c21f3</Color>
+            <Color x:Key="TextColor">#FFFFFF</Color>
+            <Color x:Key="LabelColor">#B5B4B5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Margin="30">
             <StackLayout
@@ -14,7 +21,7 @@
                     Padding="10,30,10,30"
                     FontSize="Title"
                     HorizontalTextAlignment="Center"
-                    TextColor="White"/>
+                    TextColor="{StaticResource TextColor}"/>
 
                 <Entry Text="{Binding Location.Zip}"
                     BackgroundColor="White"
@@ -25,8 +32,8 @@
 
                 <Button Text="Get Tax Rates"
                     Command="{Binding GetTaxRate}"
-                    BackgroundColor="#7c21f3"
-                    TextColor="White"
+                    BackgroundColor="{StaticResource ButtonColor}"
+                    TextColor="{StaticResource TextColor}"
                     Padding="20"
                     FontSize="Medium"/>
 
@@ -39,7 +46,7 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center">
 
-                <ActivityIndicator Color="White" IsRunning="True"/>
+                <ActivityIndicator Color="{StaticResource TextColor}" IsRunning="True"/>
             </Frame>
 
             <ScrollView VerticalOptions="FillAndExpand" IsVisible="{Binding LocationDetailsVisible}">
@@ -49,7 +56,7 @@
                         Padding="20,20,0,10"
                         FontSize="Large"
                         HorizontalTextAlignment="Start"
-                        TextColor="White"/>
+                        TextColor="{StaticResource TextColor}"/>
 
                     <Grid ColumnSpacing="0"
                         Margin="30,0,0,0">
@@ -68,11 +75,11 @@
                             FontSize="Medium"
                             Grid.Column="0"
                             Grid.Row="0"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.Location.City}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="0"/>
@@ -81,11 +88,11 @@
                             FontSize="Medium"
                             Grid.Column="0"
                             Grid.Row="1"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.Location.State}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="1"/>
@@ -94,11 +101,11 @@
                             Grid.Column="0"
                             FontSize="Medium"
                             Grid.Row="2"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.Location.Country}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="2"/>
@@ -107,11 +114,11 @@
                             Grid.Column="0"
                             FontSize="Medium"
                             Grid.Row="3"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.Location.Zip}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="3"/>
@@ -122,7 +129,7 @@
                         Padding="20,20,0,10"
                         FontSize="Large"
                         HorizontalTextAlignment="Start"
-                        TextColor="White"/>
+                        TextColor="{StaticResource TextColor}"/>
 
                     <Grid ColumnSpacing="0"
                         Margin="30,0,0,0">
@@ -142,11 +149,11 @@
                             FontSize="Medium"
                             Grid.Column="0"
                             Grid.Row="0"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.CombinedRate}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="0" />
@@ -155,11 +162,11 @@
                             FontSize="Medium"
                             Grid.Column="0"
                             Grid.Row="1"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.CityRate}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="1" />
@@ -168,11 +175,11 @@
                             FontSize="Medium"
                             Grid.Column="0"
                             Grid.Row="2"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.StateRate}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="2" />
@@ -181,11 +188,11 @@
                             Grid.Column="0"
                             FontSize="Medium"
                             Grid.Row="3"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.CountyRate}"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="3" />
@@ -194,12 +201,12 @@
                             Grid.Column="0"
                             FontSize="Medium"
                             Grid.Row="4"
-                            TextColor="#B5B4B5"/>
+                            TextColor="{StaticResource LabelColor}"/>
                         <Label Text="{Binding TaxRateResult.CombinedDistrictRate}"
                             VerticalTextAlignment="Center"
                             HorizontalOptions="EndAndExpand"
                             Grid.Column="1"
-                            TextColor="White"
+                            TextColor="{StaticResource TextColor}"
                             FontSize="Medium"
                             Padding="0,0,10,0"
                             Grid.Row="4" />

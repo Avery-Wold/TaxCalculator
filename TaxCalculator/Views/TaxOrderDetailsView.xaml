@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TaxCalculator.Views.TaxOrderDetailsView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ButtonColor">#7c21f3</Color>
+            <Color x:Key="TextColor">#FFFFFF</Color>
+            <Color x:Key="LabelColor">#B5B4B5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="30">
+            <StackLayout
+                HorizontalOptions="StartAndExpand"
+                Orientation="Horizontal"
+                Spacing="20">
+                <Label
+                    Text="Order Result"
+                    Padding="0,0,0,10"
+                    FontSize="Title"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource TextColor}"/>
+            </StackLayout>
+
+            <Grid ColumnSpacing="20"
+                RowSpacing="10"
+                Margin="30,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Total Order Amount:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    TextColor="{StaticResource TextColor}"/>
+                <Label Text="{Binding TaxOrderResult.OrderTotalAmount}"
+                       x:Name="OrderTotalLabel"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalTextAlignment="Center"
+                    Grid.Column="1"
+                    TextColor="{StaticResource LabelColor}"
+                    FontSize="Medium"
+                    Padding="0,0,10,0"
+                    Grid.Row="0"/>
+
+                <Label Text="Shipping Cost:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    TextColor="{StaticResource TextColor}"/>
+                <Label Text="{Binding TaxOrderResult.Shipping}"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalTextAlignment="Center"
+                    Grid.Column="1"
+                    TextColor="{StaticResource LabelColor}"
+                    FontSize="Medium"
+                    Padding="0,0,10,0"
+                    Grid.Row="1"/>
+
+                <Label Text="Taxable Amount:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    TextColor="{StaticResource TextColor}"/>
+                <Label Text="{Binding TaxOrderResult.TaxableAmount}"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalTextAlignment="Center"
+                    Grid.Column="1"
+                    TextColor="{StaticResource LabelColor}"
+                    FontSize="Medium"
+                    Padding="0,0,10,0"
+                    Grid.Row="2"/>
+
+                <Label Text="Amount To Collect:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    TextColor="{StaticResource TextColor}"/>
+                <Label Text="{Binding TaxOrderResult.AmountToCollect}"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalTextAlignment="Center"
+                    Grid.Column="1"
+                    TextColor="{StaticResource LabelColor}"
+                    FontSize="Medium"
+                    Padding="0,0,10,0"
+                    Grid.Row="3"/>
+
+                <Label Text="Tax Rate:"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center"
+                    Padding="-20,0,20,0"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    TextColor="{StaticResource TextColor}"/>
+                <Label Text="{Binding TaxOrderResult.TaxRate}"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalTextAlignment="Center"
+                    Grid.Column="1"
+                    TextColor="{StaticResource LabelColor}"
+                    FontSize="Medium"
+                    Padding="0,0,10,0"
+                    Grid.Row="4"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

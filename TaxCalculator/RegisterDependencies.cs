@@ -17,12 +17,13 @@ namespace TaxCalculator
 			containerBuilder.RegisterType<MainPage>();
 			containerBuilder.RegisterType<TaxCalculatorView>();
 			containerBuilder.RegisterType<TaxOrderView>();
+			containerBuilder.RegisterType<TaxOrderDetailsView>();
 
 			//Service Injection
 			containerBuilder.RegisterType<TaxService>();
 
 			var container = containerBuilder.Build();
-			Resolver.Initialize(container);
+            Resolver.Initialize(container);
 		}
 	}
 }

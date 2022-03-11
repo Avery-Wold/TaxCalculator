@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using TaxCalculator.Services;
+using TaxCalculator.Views;
 using TaxCalculatorApp.Models;
 using Taxjar;
 using Xamarin.Forms;
@@ -11,48 +13,58 @@ namespace TaxCalculator.ViewModels
     {
         private readonly ITaxService _taxService;
 
-        public TaxOrder TaxOrder { get; set; }
-        public FromLocation FromLocation { get; set; }
-        public ToLocation ToLocation { get; set; }
-		public TaxOrderResult TaxOrderResult { get; set; }
-
 		public TaxOrderViewModel(TaxService taxService)
         {
             _taxService = taxService;
-
             TaxOrder = new TaxOrder();
-            ToLocation = new ToLocation();
-            FromLocation = new FromLocation();
         }
 
 		public ICommand GetTaxForOrder => new Command(async () =>
 		{
 			try
 			{
-				TaxOrder.FromLocation = new FromLocation
-				{
-					FromCountry = FromLocation.FromCountry,
-					FromZip = FromLocation.FromZip,
-					FromState = FromLocation.FromState,
-					FromCity = FromLocation.FromCity,
-					FromStreet = FromLocation.FromStreet
-				};
+                // Hardcoding line item values
+                var lineItems = new List<TaxCalculatorApp.Models.LineItem>();
+                lineItems.Add(new TaxCalculatorApp.Models.LineItem
+                {
+                    Id = "1",
+                    Quantity = 1,
+                    ProductTaxCode = "31000",
+                    UnitPrice = 15,
+                    Discount = 0
+                });
+                TaxOrder.LineItems = lineItems;
 
-				TaxOrder.ToLocation = new ToLocation
-				{
-					ToCountry = ToLocation.ToCountry,
-					ToZip = ToLocation.ToZip,
-					ToState = ToLocation.ToState,
-					ToCity = ToLocation.ToCity,
-					ToStreet = ToLocation.ToStreet
-				};
+                TaxOrderResult = await _taxService.GetTaxForOrder(TaxOrder);
 
-				TaxOrderResult = await _taxService.GetTaxForOrder(TaxOrder);
-			}
+                await Navigation.PushAsync(new TaxOrderDetailsView(TaxOrderResult));
+            }
 			catch (TaxjarException e)
 			{
-				await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
+                await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
 			}
 		});
-	}
+
+        private TaxOrder taxOrder;
+        public TaxOrder TaxOrder
+        {
+            get => taxOrder;
+            set
+            {
+                taxOrder = value;
+                OnPropertyChanged(nameof(TaxOrder));
+            }
+        }
+
+        private TaxOrderResult taxOrderResult;
+        public TaxOrderResult TaxOrderResult
+        {
+            get => taxOrderResult;
+            set
+            {
+                taxOrderResult = value;
+                OnPropertyChanged(nameof(TaxOrderResult));
+            }
+        }
+    }
 }

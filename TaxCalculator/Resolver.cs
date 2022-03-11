@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using TaxCalculatorApp.Models;
 
 namespace TaxCalculator
 {
