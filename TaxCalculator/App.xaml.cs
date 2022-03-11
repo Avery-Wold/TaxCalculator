@@ -17,6 +17,8 @@ namespace TaxCalculator
 
             if (Device.RuntimePlatform == Device.iOS)
                 ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+
+            NavigationPage.SetBackButtonTitle(this, "");
         }
 
         protected override void OnStart()

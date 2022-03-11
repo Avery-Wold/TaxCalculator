@@ -25,8 +25,7 @@
             </StackLayout>
 
             <Grid ColumnSpacing="20"
-                RowSpacing="10"
-                Margin="30,0,0,0">
+                RowSpacing="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="*" />
@@ -42,7 +41,7 @@
                 <Label Text="Total Order Amount:"
                     FontSize="Medium"
                     VerticalTextAlignment="Center"
-                    Padding="-20,0,20,0"
+                    Padding="10,0,20,0"
                     Grid.Column="0"
                     Grid.Row="0"
                     TextColor="{StaticResource TextColor}"/>
@@ -59,7 +58,7 @@
                 <Label Text="Shipping Cost:"
                     FontSize="Medium"
                     VerticalTextAlignment="Center"
-                    Padding="-20,0,20,0"
+                    Padding="10,0,20,0"
                     Grid.Column="0"
                     Grid.Row="1"
                     TextColor="{StaticResource TextColor}"/>
@@ -75,7 +74,7 @@
                 <Label Text="Taxable Amount:"
                     FontSize="Medium"
                     VerticalTextAlignment="Center"
-                    Padding="-20,0,20,0"
+                    Padding="10,0,20,0"
                     Grid.Column="0"
                     Grid.Row="2"
                     TextColor="{StaticResource TextColor}"/>
@@ -91,7 +90,7 @@
                 <Label Text="Amount To Collect:"
                     FontSize="Medium"
                     VerticalTextAlignment="Center"
-                    Padding="-20,0,20,0"
+                    Padding="10,0,20,0"
                     Grid.Column="0"
                     Grid.Row="3"
                     TextColor="{StaticResource TextColor}"/>
@@ -107,7 +106,7 @@
                 <Label Text="Tax Rate:"
                     FontSize="Medium"
                     VerticalTextAlignment="Center"
-                    Padding="-20,0,20,0"
+                    Padding="10,0,20,0"
                     Grid.Column="0"
                     Grid.Row="4"
                     TextColor="{StaticResource TextColor}"/>
