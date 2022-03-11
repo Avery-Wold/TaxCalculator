@@ -11,24 +11,22 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Margin="30">
-            <StackLayout
-                HorizontalOptions="Center"
-                Orientation="Vertical"
-                Spacing="20">
+        <StackLayout>
+            
                 <Label
                     Text="Enter Zip Code For Location:"
-                    Padding="10,0,10,20"
+                    Padding="0,30,0,10"
                     FontSize="Title"
                     HorizontalTextAlignment="Center"
                     TextColor="{StaticResource TextColor}"/>
-
+            <StackLayout Margin="20">
                 <Entry Text="{Binding Location.Zip}"
                     BackgroundColor="White"
                     Placeholder="Required"
                     PlaceholderColor="LightGray"
                     TextColor="Black"
-                    Keyboard="Numeric"/>
+                    Keyboard="Numeric"
+                    Margin="0,0,0,10"/>
 
                 <Button Text="Get Tax Rates"
                     Command="{Binding GetTaxRate}"

@@ -1,32 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaxCalculator.MainPage"
-             Title="Tax Calculator">
+             x:Class="TaxCalculator.MainPage">
+    <NavigationPage.TitleView>
+        <Label Text="Tax Calculator"
+               HorizontalTextAlignment="Center"
+               FontSize="Title"
+               FontAttributes="Bold"
+               TextColor="{StaticResource TextColor}"/>
+    </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="ButtonColor">#7c21f3</Color>
             <Color x:Key="TextColor">#FFFFFF</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-     <StackLayout >
+     <StackLayout>
          <StackLayout
             HorizontalOptions="CenterAndExpand"
             Orientation="Vertical"
             Spacing="20">
 
             <Label
-                Text="Select an option to calculate tax"
-                Padding="0,30,0,20"
+                Text="Select an option to get started"
+                Padding="0,30,0,0"
                 FontSize="Title"
-                HorizontalTextAlignment="Center"
-                TextColor="{StaticResource TextColor}"/>
+                TextColor="{StaticResource TextColor}"
+                x:Name="optionLabel"/>
 
             <StackLayout
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"
                 Spacing="20"
-                >
+                 x:Name="buttonStackLayout">
 
                 <Button Text="Get Tax Rates For Location"
                     Command="{Binding GoToTaxRatesView}"
