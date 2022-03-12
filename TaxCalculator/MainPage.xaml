@@ -4,10 +4,10 @@
              x:Class="TaxCalculator.MainPage">
     <NavigationPage.TitleView>
         <Label Text="Tax Calculator"
-               HorizontalTextAlignment="Center"
-               FontSize="Title"
-               FontAttributes="Bold"
-               TextColor="{StaticResource TextColor}"/>
+            HorizontalTextAlignment="Center"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="{StaticResource TextColor}"/>
     </NavigationPage.TitleView>
     <ContentPage.Resources>
         <ResourceDictionary>

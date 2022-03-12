@@ -1,17 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Moq;
+﻿using Moq;
 using NUnit.Framework;
 using TaxCalculator.Services;
 using TaxCalculator.ViewModels;
-using TaxCalculator.Views;
-using TaxCalculatorApp.Models;
-using Xamarin.Forms;
-using Autofac;
-using Autofac.Extras.Moq;
-using System.Windows.Input;
-using System.Reflection;
 
 namespace TaxCalculator.Tests.ViewModelTests
 {
@@ -23,7 +13,6 @@ namespace TaxCalculator.Tests.ViewModelTests
         [SetUp]
         public void Setup()
         {
-            MockForms.Init();
             _taxService = new Mock<TaxService>();
         }
 

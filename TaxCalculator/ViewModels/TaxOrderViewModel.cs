@@ -21,28 +21,39 @@ namespace TaxCalculator.ViewModels
 
 		public ICommand GetTaxForOrder => new Command(async () =>
 		{
-			try
-			{
-                // Hardcoding line item values
-                var lineItems = new List<TaxCalculatorApp.Models.LineItem>();
-                lineItems.Add(new TaxCalculatorApp.Models.LineItem
-                {
-                    Id = "1",
-                    Quantity = 1,
-                    ProductTaxCode = "31000",
-                    UnitPrice = 15,
-                    Discount = 0
-                });
-                TaxOrder.LineItems = lineItems;
-
-                TaxOrderResult = await _taxService.GetTaxForOrder(TaxOrder);
-
-                await Navigation.PushAsync(new TaxOrderDetailsView(TaxOrderResult));
+            if (TaxOrder.FromState == null || TaxOrder.FromZip == null || TaxOrder.FromCountry == null)
+            {
+                await DisplayAlert("You must enter From State, Zip and Country", "", "OK");
             }
-			catch (TaxjarException e)
-			{
-                await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
-			}
+            else if (TaxOrder.ToState == null || TaxOrder.ToZip == null || TaxOrder.ToState == null)
+            {
+                await DisplayAlert("You must enter To State, Zip and Country", "", "OK");
+            }
+            else
+            {
+                try
+                {
+                    // Hardcoding line item values
+                    var lineItems = new List<TaxCalculatorApp.Models.LineItem>();
+                    lineItems.Add(new TaxCalculatorApp.Models.LineItem
+                    {
+                        Id = "1",
+                        Quantity = 1,
+                        ProductTaxCode = "31000",
+                        UnitPrice = 15,
+                        Discount = 0
+                    });
+                    TaxOrder.LineItems = lineItems;
+
+                    TaxOrderResult = await _taxService.GetTaxForOrder(TaxOrder);
+
+                    await Navigation.PushAsync(new TaxOrderDetailsView(TaxOrderResult));
+                }
+                catch (TaxjarException e)
+                {
+                    await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
+                }
+            }
 		});
 
         private TaxOrder taxOrder;

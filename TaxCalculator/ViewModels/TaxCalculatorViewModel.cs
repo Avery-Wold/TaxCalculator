@@ -19,18 +19,24 @@ namespace TaxCalculator.ViewModels
 
         public ICommand GetTaxRate => new Command(async () =>
         {
-            IsRefreshing = true;
-
-            try
+            if (Location.Zip != null)
             {
-                TaxRateResult = await _taxService.GetTaxRateForLocation(Location);
-                IsRefreshing = false;
-                LocationDetailsVisible = true;
+                IsRefreshing = true;
+                try
+                {
+                    TaxRateResult = await _taxService.GetTaxRateForLocation(Location);
+                    IsRefreshing = false;
+                    LocationDetailsVisible = true;
+                }
+                catch (TaxjarException e)
+                {
+                    IsRefreshing = false;
+                    await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
+                }
             }
-            catch (TaxjarException e)
+            else
             {
-                IsRefreshing = false;
-                await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
+                await DisplayAlert("You must enter a zip code", "", "OK");
             }
         });
 
@@ -53,6 +59,7 @@ namespace TaxCalculator.ViewModels
             {
                 _location = value;
                 OnPropertyChanged(nameof(Location));
+                RaiseCanExecuteChanged();
             }
         }
 
@@ -77,5 +84,9 @@ namespace TaxCalculator.ViewModels
                 OnPropertyChanged(nameof(IsRefreshing));
             }
         }
+
+        public event EventHandler CanExecuteChange;
+
+        public void RaiseCanExecuteChanged() => CanExecuteChange?.Invoke(this, EventArgs.Empty);
     }
 }

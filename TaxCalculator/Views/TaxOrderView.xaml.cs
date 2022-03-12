@@ -13,5 +13,5 @@ namespace TaxCalculator.Views
 			Title = "Get Tax Rate For Order";
 			BackgroundColor = Color.FromHex("#312F31");
 		}
-	}
+    }
 }

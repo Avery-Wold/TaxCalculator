@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using TaxCalculator.Services;
 using TaxCalculator.ViewModels;
+using TaxCalculatorApp.Models;
 
 namespace TaxCalculator.Tests.ViewModelTests
 {
@@ -19,13 +21,24 @@ namespace TaxCalculator.Tests.ViewModelTests
         //    //_vm = new MainPageViewModel(mainPageMock);
         //}
         private Mock<TaxService> _taxService;
-        TaxCalculatorViewModel _vm;
 
         [SetUp]
         public void Setup()
         {
             _taxService = new Mock<TaxService>();
-            _vm = new TaxCalculatorViewModel(_taxService.Object);
+        }
+
+        [Test]
+        public void GetTaxRateButton_On_CanExecute()
+        {
+            // Act
+            var taxServiceMock = _taxService.Object;
+
+            // Arrange
+            var viewModel = new TaxCalculatorViewModel(taxServiceMock);
+
+            // Assert
+            viewModel.GetTaxRate.CanExecute(true);
         }
     }
 }
