@@ -5,7 +5,7 @@ namespace TaxCalculator
     {
         public static string TaxJarApiKey
         {
-            get { return "5da2f821eee4035db4771edab942a4cc"; }
+            get { return "<Enter API Key Here>"; }
         }
     }
 }
