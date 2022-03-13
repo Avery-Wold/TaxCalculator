@@ -18,7 +18,7 @@ namespace TaxCalculator.Tests.ServiceTests
         }
 
         [Test]
-        public void GetTaxRate_WithNoZip_DisplaysAlert()
+        public void DialogService_DisplaysAlert()
         {
             // Arange 
             _dialogService.Setup(d => d.DisplayAlert(It.IsAny<string>())).Returns(Task.CompletedTask);
