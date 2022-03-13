@@ -12,22 +12,25 @@ namespace TaxCalculator.ViewModels
     public class TaxOrderViewModel : ViewModelBase
     {
         private readonly ITaxService _taxService;
+        private readonly IDialogService _dialogService;
 
-		public TaxOrderViewModel(TaxService taxService)
+		public TaxOrderViewModel(TaxService taxService, DialogService dialogService)
         {
             _taxService = taxService;
+            _dialogService = dialogService;
             TaxOrder = new TaxOrder();
         }
 
 		public ICommand GetTaxForOrder => new Command(async () =>
 		{
-            if (TaxOrder.FromState == null || TaxOrder.FromZip == null || TaxOrder.FromCountry == null)
+            if (TaxOrder.FromState == string.Empty || TaxOrder.FromZip == string.Empty || TaxOrder.FromCountry == string.Empty)
             {
-                await DisplayAlert("You must enter From State, Zip and Country", "", "OK");
+                await _dialogService.DisplayAlert("You must enter From State, Zip and Country");
+
             }
-            else if (TaxOrder.ToState == null || TaxOrder.ToZip == null || TaxOrder.ToState == null)
+            else if (TaxOrder.ToState == string.Empty || TaxOrder.ToZip == string.Empty || TaxOrder.ToCountry == string.Empty)
             {
-                await DisplayAlert("You must enter To State, Zip and Country", "", "OK");
+                await _dialogService.DisplayAlert("You must enter To State, Zip and Country");
             }
             else
             {
@@ -51,7 +54,7 @@ namespace TaxCalculator.ViewModels
                 }
                 catch (TaxjarException e)
                 {
-                    await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
+                    await _dialogService.DisplayAlert(e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail);
                 }
             }
 		});

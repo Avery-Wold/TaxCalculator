@@ -8,10 +8,12 @@ namespace TaxCalculator.ViewModels
     public class MainPageViewModel : ViewModelBase
     {
         private readonly ITaxService _taxService;
+        private readonly IDialogService _dialogService;
 
-        public MainPageViewModel(TaxService taxService)
+        public MainPageViewModel(TaxService taxService, DialogService dialogService)
         {
             _taxService = taxService;
+            _dialogService = dialogService;
         }
 
         public ICommand GoToTaxRatesView => new Command(async () =>

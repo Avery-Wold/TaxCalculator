@@ -10,33 +10,37 @@ namespace TaxCalculator.ViewModels
     public class TaxCalculatorViewModel : ViewModelBase
     {
         private readonly ITaxService _taxService;
+        private readonly IDialogService _dialogService;
 
-        public TaxCalculatorViewModel(TaxService taxService)
+        public TaxCalculatorViewModel(TaxService taxService, DialogService dialogService)
         {
             _taxService = taxService;
+            _dialogService = dialogService;
             Location = new Location();
         }
 
         public ICommand GetTaxRate => new Command(async () =>
         {
-            if (Location.Zip != null)
+            if (Location.Zip != string.Empty)
             {
                 IsRefreshing = true;
                 try
                 {
                     TaxRateResult = await _taxService.GetTaxRateForLocation(Location);
-                    IsRefreshing = false;
                     LocationDetailsVisible = true;
                 }
                 catch (TaxjarException e)
                 {
+                    await _dialogService.DisplayAlert(e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail);
+                }
+                finally
+                {
                     IsRefreshing = false;
-                    await DisplayAlert("Attention", e.TaxjarError.StatusCode + " " + e.TaxjarError.Detail, "OK");
                 }
             }
             else
             {
-                await DisplayAlert("You must enter a zip code", "", "OK");
+                await _dialogService.DisplayAlert("You must enter a zip code");
             }
         });
 
@@ -59,7 +63,6 @@ namespace TaxCalculator.ViewModels
             {
                 _location = value;
                 OnPropertyChanged(nameof(Location));
-                RaiseCanExecuteChanged();
             }
         }
 
@@ -84,9 +87,5 @@ namespace TaxCalculator.ViewModels
                 OnPropertyChanged(nameof(IsRefreshing));
             }
         }
-
-        public event EventHandler CanExecuteChange;
-
-        public void RaiseCanExecuteChanged() => CanExecuteChange?.Invoke(this, EventArgs.Empty);
     }
 }

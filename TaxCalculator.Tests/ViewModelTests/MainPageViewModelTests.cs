@@ -9,11 +9,13 @@ namespace TaxCalculator.Tests.ViewModelTests
     public class MainPageViewModelTests
     {
         private Mock<TaxService> _taxService;
+        private Mock<DialogService> _dialogService;
 
         [SetUp]
         public void Setup()
         {
             _taxService = new Mock<TaxService>();
+            _dialogService = new Mock<DialogService>();
         }
 
         [Test]
@@ -21,9 +23,10 @@ namespace TaxCalculator.Tests.ViewModelTests
         {
             // Act
             var taxServiceMock = _taxService.Object;
+            var dialogServiceMock = _dialogService.Object;
 
             // Arrange
-            var viewModel = new MainPageViewModel(taxServiceMock);
+            var viewModel = new MainPageViewModel(taxServiceMock, dialogServiceMock);
 
             // Assert
             Assert.NotNull(viewModel);
@@ -34,12 +37,14 @@ namespace TaxCalculator.Tests.ViewModelTests
         {
             // Act
             var taxServiceMock = _taxService.Object;
+            var dialogServicMock = _dialogService.Object;
+            var viewModel = new MainPageViewModel(taxServiceMock, dialogServicMock);
 
             // Arrange
-            var viewModel = new MainPageViewModel(taxServiceMock);
+            var result = viewModel.GoToTaxRatesView.CanExecute(true);
 
             // Assert
-            viewModel.GoToTaxRatesView.CanExecute(true);
+            Assert.That(result, Is.True);
         }
 
         [Test]
@@ -47,12 +52,14 @@ namespace TaxCalculator.Tests.ViewModelTests
         {
             // Act
             var taxServiceMock = _taxService.Object;
+            var dialogServicMock = _dialogService.Object;
+            var viewModel = new MainPageViewModel(taxServiceMock, dialogServicMock);
 
             // Arrange
-            var viewModel = new MainPageViewModel(taxServiceMock);
+            var result = viewModel.GoToTaxOrderView.CanExecute(true);
 
             // Assert
-            viewModel.GoToTaxOrderView.CanExecute(true);
+            Assert.That(result, Is.True);
         }
     }
 }

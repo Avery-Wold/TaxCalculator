@@ -21,6 +21,7 @@ namespace TaxCalculator
 
 			//Service Injection
 			containerBuilder.RegisterType<TaxService>();
+			containerBuilder.RegisterType<DialogService>();
 
 			var container = containerBuilder.Build();
             Resolver.Initialize(container);

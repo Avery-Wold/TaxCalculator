@@ -77,8 +77,8 @@
                 <Entry Text="{Binding TaxOrder.FromState}"
                     Grid.Column="1"
                     Grid.Row="2"
-                    Placeholder="State"
-                    PlaceholderColor="LightGray"
+                    Placeholder="State*"
+                    PlaceholderColor="Red"
                     BackgroundColor="White"
                     TextColor="Black"/>
 
@@ -92,8 +92,8 @@
                 <Entry Text="{Binding TaxOrder.FromZip}"
                     Grid.Column="1"
                     Grid.Row="3"
-                    Placeholder="Zip Code"
-                    PlaceholderColor="LightGray"
+                    Placeholder="Zip Code*"
+                    PlaceholderColor="Red"
                     BackgroundColor="White"
                     TextColor="Black"
                     Keyboard="Numeric"/>
@@ -108,8 +108,8 @@
                 <Entry Text="{Binding TaxOrder.FromCountry}"
                     Grid.Column="1"
                     Grid.Row="4"
-                    Placeholder="Country"
-                    PlaceholderColor="LightGray"
+                    Placeholder="Country*"
+                    PlaceholderColor="Red"
                     BackgroundColor="White"
                     TextColor="Black"/>
             </Grid>
@@ -180,8 +180,8 @@
                 <Entry Text="{Binding TaxOrder.ToState}"
                     Grid.Column="1"
                     Grid.Row="2"
-                    Placeholder="State"
-                    PlaceholderColor="LightGray"
+                    Placeholder="State*"
+                    PlaceholderColor="Red"
                     BackgroundColor="White"
                     TextColor="Black"/>
 
@@ -195,8 +195,8 @@
                 <Entry Text="{Binding TaxOrder.ToZip}"
                     Grid.Column="1"
                     Grid.Row="3"
-                    Placeholder="Zip Code"
-                    PlaceholderColor="LightGray"
+                    Placeholder="Zip Code*"
+                    PlaceholderColor="Red"
                     BackgroundColor="White"
                     TextColor="Black"
                     Keyboard="Numeric"/>
@@ -211,8 +211,8 @@
                 <Entry Text="{Binding TaxOrder.ToCountry}"
                     Grid.Column="1"
                     Grid.Row="4"
-                    Placeholder="Country"
-                    PlaceholderColor="LightGray"
+                    Placeholder="Country*"
+                    PlaceholderColor="Red"
                     BackgroundColor="White"
                     TextColor="Black"/>
             </Grid>

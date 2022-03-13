@@ -31,7 +31,7 @@ namespace TaxCalculator.Tests.ServiceTests
             }
             else
             {
-                Assert.IsFalse(false, "no api key received");
+                Assert.IsFalse(false, "No API key received");
             }
         }
 
@@ -79,7 +79,7 @@ namespace TaxCalculator.Tests.ServiceTests
         }
 
         [Test]
-        public async Task GetTaxRateForOrder_WithValidTaxOrder_ReturnsNull()
+        public async Task GetTaxRateForOrder_WithValidTaxOrder_ReturnsRates()
         {
             // Arrange
             var mockService = _taxService.Object;
@@ -118,7 +118,7 @@ namespace TaxCalculator.Tests.ServiceTests
         }
 
         [Test]
-        public async Task GetTaxRateForOrder_WithInvalidTaxOrder_ReturnsRates()
+        public async Task GetTaxRateForOrder_WithInvalidTaxOrder_ReturnsNull()
         {
             // Arrange
             var mockService = _taxService.Object;
