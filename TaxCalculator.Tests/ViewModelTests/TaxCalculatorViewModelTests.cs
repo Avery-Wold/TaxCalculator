@@ -23,21 +23,6 @@ namespace TaxCalculator.Tests.ViewModelTests
         }
 
         [Test]
-        public void GetTaxRateButton_OnNavigatedTo_CanExecute()
-        {
-            // Arrange
-            var taxServiceMock = _taxService.Object;
-            var dialogServiceMock = _dialogService.Object;
-            var viewModel = new TaxCalculatorViewModel(taxServiceMock, dialogServiceMock);
-
-            // Act
-            var result = viewModel.GetTaxRate.CanExecute(true);
-
-            // Assert
-            Assert.That(result, Is.True);
-        }
-
-        [Test]
         public void GetTaxRate_WithValidZip_CallsService()
         {
             // Arange
@@ -55,6 +40,7 @@ namespace TaxCalculator.Tests.ViewModelTests
 
             // Assert
             _taxService.Verify();
+            Assert.Pass();
         }
 
         [Test]
@@ -77,6 +63,7 @@ namespace TaxCalculator.Tests.ViewModelTests
 
             // Assert
             _dialogService.Verify(ds => ds.DisplayAlert(expectedMessage), Times.AtLeastOnce);
+            Assert.Pass();
         }
 
         [Test]

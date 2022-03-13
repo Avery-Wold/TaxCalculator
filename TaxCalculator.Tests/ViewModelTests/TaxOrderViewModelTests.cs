@@ -10,7 +10,7 @@ using Taxjar;
 namespace TaxCalculator.Tests.ViewModelTests
 {
     [TestFixture]
-    public class TaxOrdreViewModelTests
+    public class TaxOrderViewModelTests
     {
         private Mock<TaxService> _taxService;
         private Mock<DialogService> _dialogService;
@@ -20,21 +20,6 @@ namespace TaxCalculator.Tests.ViewModelTests
         {
             _taxService = new Mock<TaxService>();
             _dialogService = new Mock<DialogService>();
-        }
-
-        [Test]
-        public void GetTaxForOrderButton_OnNavigatedTo_CanExecute()
-        {
-            // Arrange
-            var taxServiceMock = _taxService.Object;
-            var dialogServiceMock = _dialogService.Object;
-            var viewModel = new TaxOrderViewModel(taxServiceMock, dialogServiceMock);
-
-            // Act
-            var result = viewModel.GetTaxForOrder.CanExecute(true);
-
-            // Assert
-            Assert.That(result, Is.True);
         }
 
         [TestCase("US", "MN", "55406", "US", "CA", "90011")]

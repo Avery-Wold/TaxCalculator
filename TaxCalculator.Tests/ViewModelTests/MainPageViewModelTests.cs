@@ -21,45 +21,15 @@ namespace TaxCalculator.Tests.ViewModelTests
         [Test]
         public void AppIsRunning()
         {
-            // Act
+            // Arrange
             var taxServiceMock = _taxService.Object;
             var dialogServiceMock = _dialogService.Object;
 
-            // Arrange
+            // Act
             var viewModel = new MainPageViewModel(taxServiceMock, dialogServiceMock);
 
             // Assert
             Assert.NotNull(viewModel);
-        }
-
-        [Test]
-        public void MainPageModel_OnStart_TaxRatesCommandCanExecute()
-        {
-            // Act
-            var taxServiceMock = _taxService.Object;
-            var dialogServicMock = _dialogService.Object;
-            var viewModel = new MainPageViewModel(taxServiceMock, dialogServicMock);
-
-            // Arrange
-            var result = viewModel.GoToTaxRatesView.CanExecute(true);
-
-            // Assert
-            Assert.That(result, Is.True);
-        }
-
-        [Test]
-        public void MainPageViewModel_OnStart_TaxOrdersCommandCanExecute()
-        {
-            // Act
-            var taxServiceMock = _taxService.Object;
-            var dialogServicMock = _dialogService.Object;
-            var viewModel = new MainPageViewModel(taxServiceMock, dialogServicMock);
-
-            // Arrange
-            var result = viewModel.GoToTaxOrderView.CanExecute(true);
-
-            // Assert
-            Assert.That(result, Is.True);
         }
     }
 }
