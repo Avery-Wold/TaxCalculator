@@ -23,12 +23,12 @@ namespace TaxCalculator.ViewModels
 
 		public ICommand GetTaxForOrder => new Command(async () =>
 		{
-            if (TaxOrder.FromState == string.Empty || TaxOrder.FromZip == string.Empty || TaxOrder.FromCountry == string.Empty)
+            if (string.IsNullOrWhiteSpace(TaxOrder.FromState) || string.IsNullOrWhiteSpace(TaxOrder.FromZip) || string.IsNullOrWhiteSpace(TaxOrder.FromCountry))
             {
                 await _dialogService.DisplayAlert("You must enter From State, Zip and Country");
 
             }
-            else if (TaxOrder.ToState == string.Empty || TaxOrder.ToZip == string.Empty || TaxOrder.ToCountry == string.Empty)
+            else if (string.IsNullOrWhiteSpace(TaxOrder.ToState) || string.IsNullOrWhiteSpace(TaxOrder.ToZip) || string.IsNullOrWhiteSpace(TaxOrder.ToCountry))
             {
                 await _dialogService.DisplayAlert("You must enter To State, Zip and Country");
             }

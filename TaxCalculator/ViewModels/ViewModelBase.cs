@@ -16,21 +16,5 @@ namespace TaxCalculator.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        //protected async Task DisplayAlert(
-        //    string title,
-        //    string message,
-        //    string accept = "Ok",
-        //    string cancel = null)
-        //{
-        //    if (string.IsNullOrWhiteSpace(cancel))
-        //    {
-        //        await Application.Current.MainPage.DisplayAlert(title, message, accept);
-        //    }
-        //    else
-        //    {
-        //        await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
-        //    }
-        //}
     }
 }

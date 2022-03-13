@@ -21,7 +21,7 @@ namespace TaxCalculator.ViewModels
 
         public ICommand GetTaxRate => new Command(async () =>
         {
-            if (Location.Zip != string.Empty)
+            if (!string.IsNullOrWhiteSpace(Location.Zip))
             {
                 IsRefreshing = true;
                 try
