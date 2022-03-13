@@ -78,7 +78,7 @@
                     Grid.Column="1"
                     Grid.Row="2"
                     Placeholder="State*"
-                    PlaceholderColor="Red"
+                    PlaceholderColor="LightPink"
                     BackgroundColor="White"
                     TextColor="Black"/>
 
@@ -93,7 +93,7 @@
                     Grid.Column="1"
                     Grid.Row="3"
                     Placeholder="Zip Code*"
-                    PlaceholderColor="Red"
+                    PlaceholderColor="LightPink"
                     BackgroundColor="White"
                     TextColor="Black"
                     Keyboard="Numeric"/>
@@ -109,7 +109,7 @@
                     Grid.Column="1"
                     Grid.Row="4"
                     Placeholder="Country*"
-                    PlaceholderColor="Red"
+                    PlaceholderColor="LightPink"
                     BackgroundColor="White"
                     TextColor="Black"/>
             </Grid>
@@ -181,7 +181,7 @@
                     Grid.Column="1"
                     Grid.Row="2"
                     Placeholder="State*"
-                    PlaceholderColor="Red"
+                    PlaceholderColor="LightPink"
                     BackgroundColor="White"
                     TextColor="Black"/>
 
@@ -196,7 +196,7 @@
                     Grid.Column="1"
                     Grid.Row="3"
                     Placeholder="Zip Code*"
-                    PlaceholderColor="Red"
+                    PlaceholderColor="LightPink"
                     BackgroundColor="White"
                     TextColor="Black"
                     Keyboard="Numeric"/>
@@ -212,7 +212,7 @@
                     Grid.Column="1"
                     Grid.Row="4"
                     Placeholder="Country*"
-                    PlaceholderColor="Red"
+                    PlaceholderColor="LightPink"
                     BackgroundColor="White"
                     TextColor="Black"/>
             </Grid>

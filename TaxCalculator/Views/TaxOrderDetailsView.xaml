@@ -11,7 +11,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Margin="30">
+        <StackLayout Margin="30"
+                VerticalOptions="StartAndExpand">
             <StackLayout
                 HorizontalOptions="StartAndExpand"
                 Orientation="Horizontal"

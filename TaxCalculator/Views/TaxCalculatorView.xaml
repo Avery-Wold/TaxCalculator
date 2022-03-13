@@ -22,8 +22,8 @@
             <StackLayout Margin="20">
                 <Entry Text="{Binding Location.Zip}"
                     BackgroundColor="White"
-                    Placeholder="Required"
-                    PlaceholderColor="LightGray"
+                    Placeholder="Zip Code*"
+                    PlaceholderColor="LightPink"
                     TextColor="Black"
                     Keyboard="Numeric"
                     Margin="0,0,0,10"/>
