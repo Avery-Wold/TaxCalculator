@@ -40,7 +40,6 @@ namespace TaxCalculator.Tests.ViewModelTests
 
             // Assert
             _taxService.Verify();
-            Assert.Pass();
         }
 
         [Test]
@@ -63,7 +62,6 @@ namespace TaxCalculator.Tests.ViewModelTests
 
             // Assert
             _dialogService.Verify(ds => ds.DisplayAlert(expectedMessage), Times.AtLeastOnce);
-            Assert.Pass();
         }
 
         [Test]

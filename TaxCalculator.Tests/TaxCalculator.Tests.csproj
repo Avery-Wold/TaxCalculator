@@ -113,7 +113,6 @@
     <Compile Include="ViewModelTests\MainPageViewModelTests.cs" />
     <Compile Include="ViewModelTests\TaxCalculatorViewModelTests.cs" />
     <Compile Include="ServiceTests\TaxServiceTests.cs" />
-    <Compile Include="ViewModelTests\TaxOrdreViewModelTests.cs" />
     <Compile Include="ServiceTests\DialogServiceTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

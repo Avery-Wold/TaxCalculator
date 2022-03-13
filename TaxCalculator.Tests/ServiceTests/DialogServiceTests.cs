@@ -20,7 +20,7 @@ namespace TaxCalculator.Tests.ServiceTests
         [Test]
         public void GetTaxRate_WithNoZip_DisplaysAlert()
         {
-            // Arange
+            // Arange 
             _dialogService.Setup(d => d.DisplayAlert(It.IsAny<string>())).Returns(Task.CompletedTask);
 
             // Assert
