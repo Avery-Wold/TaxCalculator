@@ -25,12 +25,12 @@ namespace TaxCalculator.Tests.ViewModelTests
         [Test]
         public void GetTaxForOrderButton_OnNavigatedTo_CanExecute()
         {
-            // Act
+            // Arrange
             var taxServiceMock = _taxService.Object;
             var dialogServiceMock = _dialogService.Object;
             var viewModel = new TaxOrderViewModel(taxServiceMock, dialogServiceMock);
 
-            // Arrange
+            // Act
             var result = viewModel.GetTaxForOrder.CanExecute(true);
 
             // Assert
@@ -40,14 +40,14 @@ namespace TaxCalculator.Tests.ViewModelTests
         [TestCase("US", "MN", "55406", "US", "CA", "90011")]
         public void GetTaxRate_WithValidData_CallsService(string fromCountry, string fromState, string fromZip, string toCountry, string toState, string toZip)
         {
-            // Act
+            // Arrange
             var taxServiceMock = _taxService.Object;
             var dialogServiceMock = _dialogService.Object;
 
             var viewModel = new TaxOrderViewModel(taxServiceMock, dialogServiceMock);
             viewModel.TaxOrder = mockTestOrder(fromCountry, fromState, fromZip, toCountry, toState, toZip);
 
-            // Arrange
+            // Act
             viewModel.GetTaxForOrder.Execute(null);
 
             // Assert
@@ -63,13 +63,13 @@ namespace TaxCalculator.Tests.ViewModelTests
         [TestCase("US", "MN", "55406", "US", "A", "90011")]
         public void GetTaxForOrder_WithInvalidData_ThrowsException(string fromCountry, string fromState, string fromZip, string toCountry, string toState, string toZip)
         {
-            // Act
+            // Arrange
             var taxServiceMock = _taxService.Object;
             var dialogServiceMock = _dialogService.Object;
             var viewModel = new TaxOrderViewModel(taxServiceMock, dialogServiceMock);
             viewModel.TaxOrder = mockTestOrder(fromCountry, fromState, fromZip, toCountry, toState, toZip);
 
-            // Arrange
+            // Act
             viewModel.GetTaxForOrder.Execute(null);
 
             // Assert
@@ -84,7 +84,7 @@ namespace TaxCalculator.Tests.ViewModelTests
         [TestCase("US", "MN", "55426", "US", "CA", "", "You must enter To State, Zip and Country")]
         public void GetTaxForOrder_WithMissingData_DisplaysAlert(string fromCountry, string fromState, string fromZip, string toCountry, string toState, string toZip, string expectedMessage)
         {
-            // Act
+            // Arrange
             var expected = expectedMessage;
             var taxServiceMock = _taxService.Object;
             _dialogService.Setup(d => d.DisplayAlert(It.IsAny<string>())).Returns(Task.CompletedTask);
@@ -93,7 +93,7 @@ namespace TaxCalculator.Tests.ViewModelTests
             var viewModel = new TaxOrderViewModel(taxServiceMock, dialogServiceMock);
             viewModel.TaxOrder = mockTestOrder(fromCountry, fromState, fromZip, toCountry, toState, toZip);
 
-            // Arrange
+            // Act
             viewModel.GetTaxForOrder.Execute(null);
 
             // Assert

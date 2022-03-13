@@ -25,12 +25,12 @@ namespace TaxCalculator.Tests.ViewModelTests
         [Test]
         public void GetTaxRateButton_OnNavigatedTo_CanExecute()
         {
-            // Act
+            // Arrange
             var taxServiceMock = _taxService.Object;
             var dialogServiceMock = _dialogService.Object;
             var viewModel = new TaxCalculatorViewModel(taxServiceMock, dialogServiceMock);
 
-            // Arrange
+            // Act
             var result = viewModel.GetTaxRate.CanExecute(true);
 
             // Assert
@@ -40,7 +40,7 @@ namespace TaxCalculator.Tests.ViewModelTests
         [Test]
         public void GetTaxRate_WithValidZip_CallsService()
         {
-            // Act
+            // Arange
             var taxServiceMock = _taxService.Object;
             var dialogServiceMock = _dialogService.Object;
 
@@ -50,7 +50,7 @@ namespace TaxCalculator.Tests.ViewModelTests
                 Zip = "55426"
             };
 
-            // Arrange
+            // Act
             viewModel.GetTaxRate.Execute(null);
 
             // Assert
@@ -60,7 +60,7 @@ namespace TaxCalculator.Tests.ViewModelTests
         [Test]
         public void GetTaxRate_WithNoZip_DisplaysAlert()
         {
-            // Act
+            // Arange
             var expectedMessage = "You must enter a zip code";
             var taxServiceMock = _taxService.Object;
             _dialogService.Setup(d => d.DisplayAlert(It.IsAny<string>())).Returns(Task.CompletedTask);
@@ -72,7 +72,7 @@ namespace TaxCalculator.Tests.ViewModelTests
                 Zip = ""
             };
 
-            // Arrange
+            // Act
             viewModel.GetTaxRate.Execute(null);
 
             // Assert
@@ -82,7 +82,7 @@ namespace TaxCalculator.Tests.ViewModelTests
         [Test]
         public void GetTaxRate_WithInvalidZip_ThrowsException()
         {
-            // Act
+            // Arrange
             var taxServiceMock = _taxService.Object;
             var dialogServiceMock = _dialogService.Object;
             var viewModel = new TaxCalculatorViewModel(taxServiceMock, dialogServiceMock);
@@ -91,7 +91,7 @@ namespace TaxCalculator.Tests.ViewModelTests
                 Zip = "5540"
             };
 
-            // Arrange
+            // Act
             viewModel.GetTaxRate.Execute(null);
 
             // Assert
