@@ -12,7 +12,7 @@ namespace TaxCalculator.Services
 			var client = new TaxjarApi(Settings.TaxJarApiKey);
 			client.headers.Add("Content-Type", "application/json");
 
-			if (taxOrder.FromZip != null)
+			if (!string.IsNullOrWhiteSpace(taxOrder.FromZip))
 			{
 				var taxForOrder = await client.TaxForOrderAsync(taxOrder);
 
@@ -41,7 +41,7 @@ namespace TaxCalculator.Services
 		{
 			var client = new TaxjarApi(Settings.TaxJarApiKey);
 
-			if (location.Zip != string.Empty)
+			if (!string.IsNullOrWhiteSpace(location.Zip))
 			{
 				var rates = await client.RatesForLocationAsync(location.Zip);
 
